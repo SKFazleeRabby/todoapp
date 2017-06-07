@@ -1,0 +1,52 @@
+@font-face {
+    font-family: Burlington;
+    src : url('/fonts/custom/burlington.ttf');
+}
+
+body{
+    background-color: #f8f8f8;
+}
+
+.btn{
+    border-radius: 0px;
+}
+
+.modal{
+    top: 150px;
+}
+
+.modal-content{
+    border-radius: 0px;
+    box-shadow:none;
+    -webkit-box-shadow: none;
+}
+
+.navbar-default{
+    padding: 10px 0px;
+    border-radius: 0px;
+    background-color: white;
+    border-color: white;
+}
+
+.navbar-brand{
+    font-family: Burlington;
+    font-size: 50px;
+    color: black !important;
+}
+
+.navbar-default .navbar-nav>li>a{
+    font-size: 18px;
+    font-family: Raleway;
+    outline: none;
+}
+
+footer{
+    background-color: white;
+    font-family: 'Raleway';
+    padding: 15px 0px;
+    padding-bottom: 5px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
