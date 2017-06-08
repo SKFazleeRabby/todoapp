@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
 </head>
 <body>
-
-@include('component.modal')
+@yield('modal')
 @include('partial.header')
 
 <section class="content">

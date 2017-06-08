@@ -79,7 +79,12 @@ module.exports = __webpack_require__(9);
 /***/ 9:
 /***/ (function(module, exports) {
 
-
+$(document).ready(function () {
+    $('#dueDate').datepicker({
+        format: 'dd M, yyyy',
+        autoclose: 'true'
+    });
+});
 
 /***/ })
 

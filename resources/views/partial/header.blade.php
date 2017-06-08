@@ -14,8 +14,9 @@
 
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" data-toggle="modal" data-target="#myModal">Add New</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#createTodo">Add New</a></li>
                     <li><a href="#">View All Todos</a></li>
+                    <li><a href="#">Delete All Completed</a></li>
                 </ul>
             </div>
         </div>

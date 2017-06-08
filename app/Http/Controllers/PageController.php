@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function view(){
-        return view('todo.view');
+        return view('todo.edit');
     }
 }
