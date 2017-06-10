@@ -7,7 +7,7 @@
                 <h4 class="modal-title" id="myModalLabel">Create a New Todo</h4>
             </div>
             <div class="modal-body">
-                {!! Form::open() !!}
+            {!! Form::open(['method' => 'POST', 'route' => 'todo.store']) !!}
                     @include('forms.todo')
                 {!! Form::close() !!}
             </div>

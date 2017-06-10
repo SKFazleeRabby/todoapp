@@ -7,6 +7,10 @@ h1,h2,h3,h4,h5,h6{
     margin: 0px;
 }
 
+form{
+    font-family: Raleway;
+}
+
 textarea{
     resize: none;
  }
@@ -116,6 +120,15 @@ span.date {
 
 .action a:focus, .action a:hover{
     color: rgba(0,0,0,1);
+}
+
+.single h3{
+    margin: 15px auto;
+}
+
+.single p{
+    margin: 30px auto;
+    line-height: 1.8;
 }
 
 footer{

@@ -11,6 +11,13 @@
 @yield('modal')
 @include('partial.header')
 
+<div class="errors">
+    <div class="container">
+        @yield('errors')
+    </div>
+</div>
+
+
 <section class="content">
     @yield('content')
 </section>
