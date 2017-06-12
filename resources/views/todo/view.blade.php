@@ -22,15 +22,15 @@
                     @elseif($todo->status === 'due')
                         <span class="status todo-fail"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
                     @endif
-                    <span class="date"> Due: {{ date('d M,Y', strtotime($todo->dueDate)) }}</span>
+                    <span class="date"> Due: {{ $todo->dueDate }}</span>
                     <span class="action pull-right">
                         <a href="{{ route('todo.view',['slug' => $todo->slug]) }}">View</a>
                         @if(! ($todo->status === 'completed'))
-                            <a href="#">Edit</a>
+                            <a href="{{ route('todo.edit',['slug' => $todo->slug]) }}">Edit</a>
                         @endif
-                        <a href="#">Delete</a>
+                        <a href="{{ route('todo.delete',['slug' => $todo->slug]) }}">Delete</a>
                         @if(! ($todo->status === 'completed'))
-                            <a href="#">Mark as Completed</a>
+                            <a href="{{ route('todo.markAsComplete',['slug' => $todo->slug]) }}">Mark as Completed</a>
                         @endif
                     </span>
                 </h3>

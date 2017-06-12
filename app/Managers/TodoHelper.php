@@ -31,29 +31,46 @@ class TodoHelper
             if(! $result->completed){
                 if($result->dueDate <= $this->today){
                     $results[$key]->status = 'due';
+                    $results[$key]->dueDate = date('d M, Y', strtotime($result->dueDate));
                     continue;
                 }
                 $results[$key]->status = 'incomplete';
+                $results[$key]->dueDate = date('d M, Y', strtotime($result->dueDate));
                 continue;
             }
             $results[$key]->status = 'completed';
+            $results[$key]->dueDate = date('d M, Y', strtotime($result->dueDate));
         }
         return $results;
     }
 
-    public function view($slug){
-        $results = $this->todo->where('slug','=',$slug)->get();
-        foreach ($results as $key => $result){
-            if(! $result->completed){
-                if($result->dueDate <= $this->today){
-                    $results[$key]->status = 'Due';
-                    continue;
-                }
-                $results[$key]->status = 'Incomplete';
-                continue;
+    public function view($slug)
+    {
+        $result = $this->todo->where('slug', '=', $slug)->first();
+        if (!$result->completed) {
+            if ($result->dueDate <= $this->today) {
+                $result->status = 'Due';
+                $result->dueDate = date('d M, Y', strtotime($result->dueDate));
+                return $result;
             }
-            $results[$key]->status = 'Completed';
+            $result->status = 'Incomplete';
+            $result->dueDate = date('d M, Y', strtotime($result->dueDate));
+            return $result;
         }
-        return $results;
+        $result->status = 'Completed';
+        $result->dueDate = date('d M, Y', strtotime($result->dueDate));
+        return $result;
+    }
+
+    public function markedAsComplete($slug){
+        $todo = $this->todo->where('slug','=',$slug)->first();
+        $todo->completed = 1;
+        $todo->update();
+        return;
+    }
+
+    public function deleteAllCompleted()
+    {
+        $this->todo->where('completed','=',1)->delete();
     }
 }

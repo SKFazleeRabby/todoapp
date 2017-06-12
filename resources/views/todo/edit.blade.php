@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="container">
-        <h2>Go To Shopping</h2>
+        <h2>{{ $todo->name }}</h2>
         <div class="col-md-8">
             <div class="block">
-                {!! Form::open() !!}
-                    @include('forms.todo')
+                {!! Form::model($todo, array('method' => 'PATCH', 'route' => array('todo.update',$todo->slug))) !!}
+                @include('forms.todo', ['submit' => 'Update Todo'])
                 {!! Form::close() !!}
             </div>
         </div>
@@ -14,8 +14,8 @@
             <div class="block">
                 <h3>Todo Details</h3>
                 <h4>Created: 10 May, 2017</h4>
-                <h4>Due Date: 15 May, 2017 (Friday)</h4>
-                <h4>Status: Incomplete</h4>
+                <h4>Due Date: {{ $todo->dueDate }}</h4>
+                <h4>Status: {{ $todo->status }}</h4>
             </div>
         </div>
     </div>

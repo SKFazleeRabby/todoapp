@@ -30,4 +30,19 @@ class TodoManager
 
         $this->todo->save();
     }
+
+    public function update($slug, $data)
+    {
+        $updateTodo = $this->todo->where('slug','=',$slug)->first();
+        $updateTodo->name = $data['name'];
+        $updateTodo->details = $data['details'];
+        $updateTodo->dueDate = date('Y-m-d', strtotime($data['dueDate']));
+
+        $updateTodo->update();
+    }
+
+    public function delete($slug){
+        $this->todo->where('slug','=',$slug)->delete();
+        return;
+    }
 }

@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
             {!! Form::open(['method' => 'POST', 'route' => 'todo.store']) !!}
-                    @include('forms.todo')
+                    @include('forms.todo', ['submit' => 'Create Todo'])
                 {!! Form::close() !!}
             </div>
         </div>
